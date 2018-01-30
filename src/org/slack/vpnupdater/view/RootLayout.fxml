@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.slack.vpnupdater.view.MainAppController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="800.0">
+
+</AnchorPane>
+   </center>
+   <top>
+       <VBox prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+           <MenuBar>
+               <menus>
+                   <Menu mnemonicParsing="false" text="File">
+                       <items>
+                           <MenuItem mnemonicParsing="false" onAction="#exitOnClose" text="Quit">
+                               <accelerator>
+                                   <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP"
+                                                       shortcut="UP"/>
+                               </accelerator>
+                           </MenuItem>
+                       </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Edit">
+                       <items>
+                           <MenuItem mnemonicParsing="false" text="Delete"/>
+                       </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Help">
+                       <items>
+                           <MenuItem mnemonicParsing="false" text="About"/>
+                       </items>
+                   </Menu>
+               </menus>
+           </MenuBar>
+           <HBox alignment="BASELINE_CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+               </VBox.margin>
+               <Label text="Config URL: "/>
+               <TextField fx:id="urlField" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS"/>
+               <Button fx:id="downloadBtn" mnemonicParsing="false" onAction="#handleDownload" text="Download"/>
+               <Button fx:id="applyBtn" mnemonicParsing="false" onAction="#handleApply" text="Apply"/>
+           </HBox>
+           <HBox alignment="CENTER">
+               <padding>
+                   <Insets bottom="10.0" top="5.0"/>
+               </padding>
+               <Label alignment="TOP_LEFT" text="Download status :">
+                   <HBox.margin>
+                       <Insets left="5.0"/>
+                   </HBox.margin>
+               </Label>
+               <ProgressBar fx:id="downloadStatus" maxWidth="1.7976931348623157E308" progress="0.0"
+                            HBox.hgrow="ALWAYS">
+                   <opaqueInsets>
+                       <Insets/>
+                   </opaqueInsets>
+                   <HBox.margin>
+                       <Insets left="10.0" right="5.0"/>
+                   </HBox.margin>
+               </ProgressBar>
+           </HBox>
+       </VBox>
+   </top>
+   <padding>
+      <Insets left="5.0" right="5.0" />
+   </padding>
+</BorderPane>
